@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+          content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+    <meta name="keywords"
+          content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+    <meta name="author" content="PIXINVENT">
+    <title>Blog App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon"
+          th:href="@{/app-assets/images/blog.jpg}">
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+            rel="stylesheet">
+    <link
+            href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
+            rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/vendors.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/forms/selects/select2.min.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/forms/icheck/icheck.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/forms/icheck/custom.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/forms/toggle/switchery.min.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/extensions/sweetalert.css}">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN MODERN CSS-->
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/app.css}">
+    <!-- END MODERN CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu-modern.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/core/colors/palette-gradient.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/plugins/forms/checkboxes-radios.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/plugins/forms/switch.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/file-uploaders/dropzone.min.css}">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/plugins/file-uploaders/dropzone.css}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" />
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/vendors/css/ui/jquery-ui.min.css}" />
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/app-assets/css/plugins/ui/jqueryui.css}">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <link
+        th:href="@{/app-assets/dropify/dist/css/dropify.min.css}"
+        rel="stylesheet" type="text/css" /> -->
+
+    <!-- jQuery library -->
+
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <!-- END Page Level CSS-->
+</head>
+<body
+        class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"
+        data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+<!-- fixed-top-->
+<!-- Top Menu Items -->
+<div th:replace="fragments/header :: header"></div>
+<!-- /Top Menu Items -->
+<!-- Left Sidebar Menu -->
+<div th:replace="fragments/leftsidebar :: leftsidebar"></div>
+<!-- /Left Sidebar Menu -->
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2">
+
+            </div>
+            <div class="content-header-right col-md-6 col-12"></div>
+        </div>
+        <div class="content-body">
+            <!-- Revenue, Hit Rate & Deals -->
+
+            <!-- below anchor tag is	for scrolling only -->
+            <a href="javascript:" id="return-to-top"><i
+                    class="icon-chevron-up"></i></a>
+            <div class="row ">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Blog Details</h2>
+                        </div>
+                        <div> <h1 th:text="${blog.title}"  style="text-align: center"></h1></div><br>
+                        <div><h4 th:text="${blog.genre}"  style="text-align: center"></h4></div><br>
+                        <div> <h5 th:text="${#dates.format(blog.createdOn, 'dd-MMM-yyyy')}"  style="text-align: center"></h5></div><br>
+                        <div> <h5 th:text="${blog.createdBy.name}"  style="text-align: center"></h5></div><br>
+                        <div class="blog-body"><p th:text="${blog.description}"></p></div>
+
+                        <div class="vote col-md-10">
+                            <div th:fragment="blog-vote">
+                                <table id="employee-List"
+                                       class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle blog-body">
+                                <tr >
+                                    <td style="text-align: center" >Total Votes</td>
+                                    <td style="text-align: center">
+                                        <span th:if="${blog.totalVotes==null}">0</span>
+                                        <span th:if="${blog.totalVotes!=null}" th:text="${blog.totalVotes}"></span>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <button class="btn btn-primary btn-sm icon-like like"
+                                                th:onclick="'voteBlog(\'' + ${blog.id} + '\',\'' + 'true' + '\');'">Like</button>
+                                        <button class="btn btn-primary btn-sm icon-dislike dislike"
+                                                th:onclick="'voteBlog(\'' + ${blog.id} + '\',\'' + 'true' + '\');'">Dislike</button>
+                                    </td>
+
+                                </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <h1 style="text-align: center" >Comments</h1>
+                        <div class="blog-comment col-md-10">
+                            <div th:fragment="blog-comment">
+                                <table id="comment"
+                                       class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle blog-body">
+                                    <tr th:if="${#lists.isEmpty(blog.comments)}" >
+
+                                        <td style="text-align: center" >No comments to show</td>
+                                    </tr>
+
+                                    <tr th:each="comment,stat: ${blog.comments}">
+                                        <td style="text-align: center" th:text="${comment.commentBody}"></td>
+                                        <td style="text-align: center">
+                                            <span>Vote: </span>
+                                            <span th:if="${comment.totalVotes==null}">0</span>
+                                            <span th:if="${comment.totalVotes!=null}" th:text="${comment.totalVotes}"></span>
+                                        </td>
+                                        <td style="text-align: center">
+                                            <span>Comment by: </span>
+                                            <span  th:text="${comment.createdBy.name}"></span>
+                                        </td>
+                                        <td style="text-align: center">
+                                            <button class="btn btn-primary btn-sm icon-like like"
+                                                    th:onclick="'voteComent(\'' + ${comment.commentId} + '\',\'' + 'true' + '\');'">Like</button>
+                                            <button class="btn btn-primary btn-sm icon-dislike dislike"
+                                                    th:onclick="'voteComent(\'' + ${comment.commentId} + '\',\'' + 'false' + '\');'">Dislike</button>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <form id="blog-comment" 
+                  th:object="${comment}">
+                <div class="row ">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Write comments</h4>
+                            </div>
+                            <input type="hidden" th:field="*{createdById}" />
+                            <input type="hidden"  th:field="*{blogId}" id="blog-id" />
+                            <div class="card-block">
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label>Comment<span style="color: red">*</span>
+                                                </label><input
+                                                    type="text" class="form-control " id="comment-body"
+                                                    th:field="*{commentBody}" required
+                                                    placeholder="Comment">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-8"></div>
+
+                                        <div class="col-md-4">
+                                            <div>
+                                                <a th:href="@{/blog/post/myself}">
+                                                    <button type="button" class="btn btn-warning mr-1">
+                                                        <i class="ft-x"></i> Cancel
+                                                    </button>
+                                                </a>
+
+                                                <button th:onclick="'makeComment()'" class="btn btn-outline-primary btn-lg">Comment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////-->
+<footer
+        class="footer footer-static footer-light navbar-border navbar-shadow">
+
+
+
+</footer>
+<!-- BEGIN VENDOR JS-->
+<script th:src="@{/app-assets/vendors/js/vendors.min.js}"
+        type="text/javascript"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+<script th:src="@{/app-assets/vendors/js/forms/icheck/icheck.min.js}"
+        type="text/javascript"></script>
+<script
+        th:src="@{/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js}"
+        type="text/javascript"></script>
+<script
+        th:src="@{/app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js}"
+        type="text/javascript"></script>
+<script
+        th:src="@{/app-assets/vendors/js/forms/toggle/switchery.min.js}"
+        type="text/javascript"></script>
+<script
+        th:src="@{/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js}"
+        type="text/javascript"></script>
+
+<script
+        th:src="@{/app-assets/vendors/js/forms/extended/typeahead/typeahead.bundle.min.js}"
+        type="text/javascript"></script>
+<script
+        th:src="@{/app-assets/vendors/js/forms/extended/typeahead/bloodhound.min.js}"
+        type="text/javascript"></script>
+<script th:src="@{/app-assets/vendors/js/extensions/sweetalert.min.js}"
+        type="text/javascript"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN MODERN JS-->
+<script th:src="@{/app-assets/js/core/app-menu.js}"
+        type="text/javascript"></script>
+<script th:src="@{/app-assets/js/core/app.js}" type="text/javascript"></script>
+<!-- <script th:src="@{/app-assets/js/scripts/customizer.js}"
+    type="text/javascript"></script> -->
+<script
+        th:src="@{/app-assets/vendors/js/forms/select/select2.full.min.js}"
+        type="text/javascript"></script>
+<!-- END MODERN JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script th:src="@{/app-assets/js/scripts/forms/checkbox-radio.js}"
+        type="text/javascript"></script>
+<script th:src="@{/app-assets/js/scripts/forms/switch.js}"
+        type="text/javascript"></script>
+<script th:src="@{/app-assets/js/scripts/forms/input-groups.js}"
+        type="text/javascript"></script>
+<script th:src="@{/app-assets/js/scripts/forms/select/form-select2.js}"
+        type="text/javascript"></script>
+<!-- <script th:src="@{/app-assets/vendors/js/extensions/dropzone.min.js}" type="text/javascript"></script>  -->
+<script th:src="@{/app-assets/vendors/js/ui/prism.min.js}"
+        type="text/javascript"></script>
+
+
+<script
+        th:src="@{/app-assets/js/core/libraries/jquery_ui/jquery-ui.min.js}"
+        type="text/javascript"></script>
+<script th:src="@{/app-assets/js/scripts/ui/jquery-ui/date-pickers.js}"
+        type="text/javascript"></script>
+
+
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+
+<!-- END PAGE LEVEL JS-->
+</body>
+<style>
+    #basicTextarea {
+        height: 147px;
+    }
+
+
+
+    .tt-suggestion p {
+        margin: 0;
+    }
+
+    .blog-body {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+</style>
+
+<script th:inline="javascript">
+
+
+    function swalcall() {
+        //uploadFile();
+        swal("Created!", "Your post is created. Wait for approval", "success");
+
+    }
+
+    function makeComment()
+	{
+	$('#blog-comment').submit(function(e){  
+		 console.log("here");
+
+	    e.preventDefault();
+	    $('#blog-id').val([[${blog.id}]]);
+	    var $form = $(this);
+	  
+	    $.ajax({
+	    	type: 'post',
+	    	 url: /*[[ @{'/blog/post/comment'} ]]*/,
+			  data:  $form.serialize(),
+			   success: function(returnedData){
+				  
+				   $('.blog-comment').html(returnedData);
+				   $('#comment-body').val("");
+				  
+				},     
+				
+				error: function(xhr, exception) {
+					
+	                }
+	    }); 
+	   
+	   
+	});
+
+	}
+
+   function voteComent(id,vote){
+	 var blogId=[[${blog.id}]];
+	   $.ajax({
+	    	type: 'get',
+	    	 url: /*[[ @{'/blog/post/comment/vote'} ]]*/,
+			  data:  {commentId:id,vote:vote,blogId:blogId},
+			   success: function(returnedData){
+				  
+				   $('.blog-comment').html(returnedData);
+				   $('#comment-body').val("");
+				  
+				},   
+				error: function(xhr, exception) {
+					alert("Can't cast vote");
+                }
+
+	    }); 
+    }
+   function voteBlog(blogId,vote){
+		
+		   $.ajax({
+		    	type: 'get',
+		    	 url: /*[[ @{'/blog/post/vote'} ]]*/,
+				  data:  {blogId:blogId,vote:vote},
+				   success: function(returnedData){
+					  
+					   $('.vote').html(returnedData);
+					   
+					},  
+					error: function(xhr, exception) {
+						alert("Can't cast vote");
+	                },
+					error: function(e) {
+						alert("Can't cast vote");
+	                }
+
+		    }); 
+	    }
+
+
+</script>
+
+</html>

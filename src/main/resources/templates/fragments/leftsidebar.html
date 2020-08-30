@@ -1,0 +1,81 @@
+
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow"
+	data-scroll-to-active="true" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="leftsidebar">
+
+	<div class="main-menu-content">
+		<ul class="navigation navigation-main" id="main-menu-navigation"
+			data-menu="menu-navigation"
+			th:with="path=${#httpServletRequest.getServletPath()}">
+
+			<li class=" nav-item"
+				th:classappend="${#strings.startsWith(path,'/home')? 'active' : ''}"><a
+				th:href="@{/home}"><span
+					class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a></li>
+			<li class=" nav-item">
+			<a><span class="menu-title"
+													   data-i18n="nav.dash.main">Blogger</span></a>
+
+				<ul class="menu-content">
+
+
+
+
+					<li
+							th:classappend="${#strings.startsWith(path,'/blogger/view')? 'active' : ''}"><a
+							th:href="@{/blogger/view}"> <span class="menu-title"
+															   data-i18n="nav.dash.main">View</span>
+					</a></li>
+					<li
+							th:classappend="${#strings.startsWith(path,'/blogger/add')? 'active' : ''}"><a
+							th:href="@{/blogger/add}"> <span class="menu-title"
+															  data-i18n="nav.dash.main">Create</span>
+					</a></li>
+
+
+
+				</ul></li>
+			<li class=" nav-item">
+				<a>	<span class="menu-title"
+														   data-i18n="nav.dash.main">Blog Post</span></a>
+
+				<ul class="menu-content">
+
+
+
+					<li
+						th:classappend="${#strings.startsWith(path,'/blog/post/create')? 'active' : ''}"><a
+							th:href="@{/blog/post/create}"> <span class="menu-title"
+														   data-i18n="nav.dash.main">Create</span>
+					</a></li>
+					<li th:if="${roleName=='ROLE_ADMIN'}"
+							><a
+							th:href="@{/blog/post}"> <span class="menu-title"
+															  data-i18n="nav.dash.main">All Post</span>
+					</a></li>
+					<li
+							th:classappend="${#strings.startsWith(path,'/blog/post/approved')? 'active' : ''}"><a
+							th:href="@{/blog/post/approved}"> <span class="menu-title"
+															 data-i18n="nav.dash.main">Approved Post</span>
+					</a></li>
+					<li
+							th:classappend="${#strings.startsWith(path,'/blog/post/myself')? 'active' : ''}"><a
+							th:href="@{/blog/post/myself}"> <span class="menu-title"
+															 data-i18n="nav.dash.main">My Post</span>
+					</a></li>
+
+
+
+				</ul></li>
+	
+
+		
+		</ul>
+	</div>
+</div>
+
+
+<script>
+	
+</script>
+
